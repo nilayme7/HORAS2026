@@ -216,7 +216,6 @@ details p{margin:0 0 8px}
     <div>
       <h1 id="appTitle" data-base="Control de horas y vacaciones 2026">Control de horas y vacaciones 2026 · Marina Mas</h1>
       <div class="sub" id="subtitle"></div>
-      <div class="sub">Horario cargado de HORARI_2026.xlsm (columna «Marina Mas»). Puedes corregir cualquier día.</div>
     </div>
     <div class="actions">
       <span class="sync" id="sync">Cargando…</span>
@@ -933,7 +932,7 @@ function renderAvgs() {
   ].concat(state.config.festwSeparate && r.festw ? [["Festivos trabajados (pagados aparte)", fmtH(r.festwHours) + " h"]] : []));
   $("avgLeft").innerHTML = kv([
     ["Horas hasta el máximo", fmtH(r.remPos) + " h"],
-    ["Días computables que quedan", r.remCompDays],
+    ["Días computables que quedan", fmtH(r.remCompDays)],
     ["Media semanal para llegar al máximo", r.remCompDays ? fmtH(r.needWeek) + " h" : "—"],
     ["Media mensual para llegar al máximo", r.remCompDays ? fmtH(r.needMonth) + " h" : "—"],
     ["Por día de trabajo (con 1,5 días libres/semana)", r.workDaysAvail > 0 ? fmtH(r.needDay, 2) + " h" : "—"],
